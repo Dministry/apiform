@@ -1,28 +1,42 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Profile  class="element"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// @ is an alias to /src
+// import HelloWorld from '@/components/HelloWorld.vue'
+import Profile from './components/Profile'
 
 export default {
-  name: 'App',
+  name: "Home",
   components: {
-    HelloWorld
+    Profile
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+html {
+  font-family: 'Roboto', sans-serif;
+  background-blend-mode:multiply;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0; }
+  .element {
+  animation: pulse 5s infinite;
 }
+
+@keyframes pulse {
+  0% {
+    background-color: linear-gradient(to right, #428bca, rgb(211, 58, 211));
+    height: 100%;
+  }
+  100% {
+    background-color:  rgb(7, 77, 87);
+    height: 100%;
+  }
+}
+
 </style>
