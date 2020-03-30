@@ -58,7 +58,7 @@ export default {
   methods: {
         checkDuplicate(newUserName) {
       this.users.forEach(user => {
-        if (user.name === newUserName || newUserName.value === "") {
+        if (user.name === newUserName || user.newUserName.value === "") {
           alert("This task already exists");
           this.newUserName = null;
           this.users.push({name: this.newuser});
