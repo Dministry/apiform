@@ -15,7 +15,7 @@
             />
             <div class="input-group-append">
               <button type="button" @click="addUser" class="btn btn-warning">
-                Submit
+                Add User
               </button>
             </div>
           </div>
@@ -53,13 +53,12 @@ export default {
     let getUsers = await axios.get(
       "https://jsonplaceholder.typicode.com/users"
     );
-    //console.log(getUsers);
     this.users = getUsers.data;
   },
   methods: {
         checkDuplicate(newUserName) {
       this.users.forEach(user => {
-        if (user.name === newUserName || user.value === "") {
+        if (user.name === newUserName || newUserName.value === "") {
           alert("This task already exists");
           this.newUserName = null;
           this.users.push({name: this.newuser});
@@ -84,7 +83,7 @@ export default {
     
     
     del(user) {
-      this.users = this.users.filter(person => person.id !== user.id);
+      this.users = this.users.filter(delUser=> delUser.id !== user.id);
       console.log(user.id);
     }
   }
